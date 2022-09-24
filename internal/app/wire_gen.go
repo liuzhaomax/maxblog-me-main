@@ -7,12 +7,12 @@
 package app
 
 import (
-	"maxblog-me-template/internal/api"
-	"maxblog-me-template/internal/conf"
-	"maxblog-me-template/internal/core"
-	"maxblog-me-template/internal/middleware/interceptor"
-	"maxblog-me-template/src/handler"
-	"maxblog-me-template/src/service"
+	"maxblog-me-main/internal/api"
+	"maxblog-me-main/internal/conf"
+	"maxblog-me-main/internal/core"
+	"maxblog-me-main/internal/middleware/interceptor"
+	"maxblog-me-main/src/handler"
+	"maxblog-me-main/src/service"
 )
 
 // Injectors from wire.go:

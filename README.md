@@ -1,4 +1,4 @@
-# MaxBlog 中端微服务模板
+# MaxBlog 中端微服务-主站
 
 protobuf
 ```shell

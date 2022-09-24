@@ -3,7 +3,7 @@ package interceptor
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
-	"maxblog-me-template/internal/core"
+	"maxblog-me-main/internal/core"
 	"net/http"
 	"strings"
 	"sync"

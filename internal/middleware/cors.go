@@ -3,7 +3,7 @@ package middleware
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"maxblog-me-template/internal/core"
+	"maxblog-me-main/internal/core"
 	"net/http"
 )
 
