@@ -23,3 +23,4 @@ go get github.com/google/wire/cmd/wire
 cd internal/app
 go run github.com/google/wire/cmd/wire
 ```
+
