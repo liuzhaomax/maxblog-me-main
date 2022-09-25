@@ -76,8 +76,13 @@ type DemoRes struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id     int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Mobile string `protobuf:"bytes,2,opt,name=mobile,proto3" json:"mobile,omitempty"`
+	Id        uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title     string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Desc      string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty"`
+	CreatedAt string `protobuf:"bytes,4,opt,name=createdAt,proto3" json:"createdAt,omitempty"`
+	Content   string `protobuf:"bytes,5,opt,name=content,proto3" json:"content,omitempty"`
+	View      uint32 `protobuf:"varint,6,opt,name=view,proto3" json:"view,omitempty"`
+	Ref       string `protobuf:"bytes,7,opt,name=ref,proto3" json:"ref,omitempty"`
 }
 
 func (x *DemoRes) Reset() {
@@ -112,18 +117,147 @@ func (*DemoRes) Descriptor() ([]byte, []int) {
 	return file_demo_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *DemoRes) GetId() int32 {
+func (x *DemoRes) GetId() uint32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DemoRes) GetMobile() string {
+func (x *DemoRes) GetTitle() string {
 	if x != nil {
-		return x.Mobile
+		return x.Title
 	}
 	return ""
+}
+
+func (x *DemoRes) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *DemoRes) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+func (x *DemoRes) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *DemoRes) GetView() uint32 {
+	if x != nil {
+		return x.View
+	}
+	return 0
+}
+
+func (x *DemoRes) GetRef() string {
+	if x != nil {
+		return x.Ref
+	}
+	return ""
+}
+
+type CountRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Count uint32 `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+}
+
+func (x *CountRequest) Reset() {
+	*x = CountRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_demo_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CountRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CountRequest) ProtoMessage() {}
+
+func (x *CountRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_demo_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CountRequest.ProtoReflect.Descriptor instead.
+func (*CountRequest) Descriptor() ([]byte, []int) {
+	return file_demo_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CountRequest) GetCount() uint32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type DemosRes struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	DataArr []*DemoRes `protobuf:"bytes,1,rep,name=dataArr,proto3" json:"dataArr,omitempty"`
+}
+
+func (x *DemosRes) Reset() {
+	*x = DemosRes{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_demo_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DemosRes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DemosRes) ProtoMessage() {}
+
+func (x *DemosRes) ProtoReflect() protoreflect.Message {
+	mi := &file_demo_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DemosRes.ProtoReflect.Descriptor instead.
+func (*DemosRes) Descriptor() ([]byte, []int) {
+	return file_demo_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *DemosRes) GetDataArr() []*DemoRes {
+	if x != nil {
+		return x.DataArr
+	}
+	return nil
 }
 
 var File_demo_proto protoreflect.FileDescriptor
@@ -131,14 +265,29 @@ var File_demo_proto protoreflect.FileDescriptor
 var file_demo_proto_rawDesc = []byte{
 	0x0a, 0x0a, 0x64, 0x65, 0x6d, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1b, 0x0a, 0x09,
 	0x49, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0x31, 0x0a, 0x07, 0x44, 0x65, 0x6d,
-	0x6f, 0x52, 0x65, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
-	0x52, 0x02, 0x69, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x6d, 0x6f, 0x62, 0x69, 0x6c, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x6f, 0x62, 0x69, 0x6c, 0x65, 0x32, 0x32, 0x0a, 0x0b,
-	0x44, 0x65, 0x6d, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x23, 0x0a, 0x0b, 0x47,
-	0x65, 0x74, 0x44, 0x65, 0x6d, 0x6f, 0x42, 0x79, 0x49, 0x64, 0x12, 0x0a, 0x2e, 0x49, 0x64, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x44, 0x65, 0x6d, 0x6f, 0x52, 0x65, 0x73,
-	0x42, 0x05, 0x5a, 0x03, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0xa1, 0x01, 0x0a, 0x07, 0x44, 0x65,
+	0x6d, 0x6f, 0x52, 0x65, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0d, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x64,
+	0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12,
+	0x1c, 0x0a, 0x09, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x18, 0x0a,
+	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x76, 0x69, 0x65, 0x77, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x76, 0x69, 0x65, 0x77, 0x12, 0x10, 0x0a, 0x03, 0x72,
+	0x65, 0x66, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x72, 0x65, 0x66, 0x22, 0x24, 0x0a,
+	0x0c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x63, 0x6f,
+	0x75, 0x6e, 0x74, 0x22, 0x2e, 0x0a, 0x08, 0x44, 0x65, 0x6d, 0x6f, 0x73, 0x52, 0x65, 0x73, 0x12,
+	0x22, 0x0a, 0x07, 0x64, 0x61, 0x74, 0x61, 0x41, 0x72, 0x72, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x08, 0x2e, 0x44, 0x65, 0x6d, 0x6f, 0x52, 0x65, 0x73, 0x52, 0x07, 0x64, 0x61, 0x74, 0x61,
+	0x41, 0x72, 0x72, 0x32, 0x58, 0x0a, 0x0b, 0x44, 0x65, 0x6d, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x12, 0x23, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x44, 0x65, 0x6d, 0x6f, 0x42, 0x79, 0x49,
+	0x64, 0x12, 0x0a, 0x2e, 0x49, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e,
+	0x44, 0x65, 0x6d, 0x6f, 0x52, 0x65, 0x73, 0x12, 0x24, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x44, 0x65,
+	0x6d, 0x6f, 0x73, 0x12, 0x0d, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x09, 0x2e, 0x44, 0x65, 0x6d, 0x6f, 0x73, 0x52, 0x65, 0x73, 0x42, 0x05, 0x5a,
+	0x03, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -153,19 +302,24 @@ func file_demo_proto_rawDescGZIP() []byte {
 	return file_demo_proto_rawDescData
 }
 
-var file_demo_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_demo_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_demo_proto_goTypes = []interface{}{
-	(*IdRequest)(nil), // 0: IdRequest
-	(*DemoRes)(nil),   // 1: DemoRes
+	(*IdRequest)(nil),    // 0: IdRequest
+	(*DemoRes)(nil),      // 1: DemoRes
+	(*CountRequest)(nil), // 2: CountRequest
+	(*DemosRes)(nil),     // 3: DemosRes
 }
 var file_demo_proto_depIdxs = []int32{
-	0, // 0: DemoService.GetDemoById:input_type -> IdRequest
-	1, // 1: DemoService.GetDemoById:output_type -> DemoRes
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	1, // 0: DemosRes.dataArr:type_name -> DemoRes
+	0, // 1: DemoService.GetDemoById:input_type -> IdRequest
+	2, // 2: DemoService.GetDemos:input_type -> CountRequest
+	1, // 3: DemoService.GetDemoById:output_type -> DemoRes
+	3, // 4: DemoService.GetDemos:output_type -> DemosRes
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_demo_proto_init() }
@@ -198,6 +352,30 @@ func file_demo_proto_init() {
 				return nil
 			}
 		}
+		file_demo_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CountRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_demo_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DemosRes); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -205,7 +383,7 @@ func file_demo_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_demo_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -232,6 +410,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DemoServiceClient interface {
 	GetDemoById(ctx context.Context, in *IdRequest, opts ...grpc.CallOption) (*DemoRes, error)
+	GetDemos(ctx context.Context, in *CountRequest, opts ...grpc.CallOption) (*DemosRes, error)
 }
 
 type demoServiceClient struct {
@@ -251,9 +430,19 @@ func (c *demoServiceClient) GetDemoById(ctx context.Context, in *IdRequest, opts
 	return out, nil
 }
 
+func (c *demoServiceClient) GetDemos(ctx context.Context, in *CountRequest, opts ...grpc.CallOption) (*DemosRes, error) {
+	out := new(DemosRes)
+	err := c.cc.Invoke(ctx, "/DemoService/GetDemos", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DemoServiceServer is the server API for DemoService service.
 type DemoServiceServer interface {
 	GetDemoById(context.Context, *IdRequest) (*DemoRes, error)
+	GetDemos(context.Context, *CountRequest) (*DemosRes, error)
 }
 
 // UnimplementedDemoServiceServer can be embedded to have forward compatible implementations.
@@ -262,6 +451,9 @@ type UnimplementedDemoServiceServer struct {
 
 func (*UnimplementedDemoServiceServer) GetDemoById(context.Context, *IdRequest) (*DemoRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDemoById not implemented")
+}
+func (*UnimplementedDemoServiceServer) GetDemos(context.Context, *CountRequest) (*DemosRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDemos not implemented")
 }
 
 func RegisterDemoServiceServer(s *grpc.Server, srv DemoServiceServer) {
@@ -286,6 +478,24 @@ func _DemoService_GetDemoById_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DemoService_GetDemos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DemoServiceServer).GetDemos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/DemoService/GetDemos",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DemoServiceServer).GetDemos(ctx, req.(*CountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _DemoService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "DemoService",
 	HandlerType: (*DemoServiceServer)(nil),
@@ -293,6 +503,10 @@ var _DemoService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDemoById",
 			Handler:    _DemoService_GetDemoById_Handler,
+		},
+		{
+			MethodName: "GetDemos",
+			Handler:    _DemoService_GetDemos_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
