@@ -3,7 +3,6 @@ module maxblog-me-main
 go 1.19
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.8.1
 	github.com/google/wire v0.5.0
 	github.com/mattn/go-colorable v0.1.12

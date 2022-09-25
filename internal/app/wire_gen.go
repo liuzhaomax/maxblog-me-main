@@ -18,17 +18,17 @@ import (
 // Injectors from wire.go:
 
 func InitInjector() (*Injector, error) {
-	bData := &service.BData{}
+	bDemo := &service.BDemo{}
 	logger := &core.Logger{}
 	response := &core.Response{
 		ILogger: logger,
 	}
-	hData := &handler.HData{
-		BData: bData,
+	hDemo := &handler.HDemo{
+		BDemo: bDemo,
 		IRes:  response,
 	}
 	apiHandler := &api.Handler{
-		HandlerData: hData,
+		HandlerDemo: hDemo,
 	}
 	engine := conf.InitGinEngine(apiHandler)
 	interceptorInterceptor := &interceptor.Interceptor{}

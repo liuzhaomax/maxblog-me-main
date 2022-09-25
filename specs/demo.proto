@@ -2,15 +2,15 @@ syntax="proto3";
 
 option go_package="/pb";
 
-service DataService {
-    rpc GetDataById(IdRequest) returns (DataRes);
+service DemoService {
+    rpc GetDemoById(IdRequest) returns (DemoRes);
 }
 
 message IdRequest {
     uint32 id=1;
 }
 
-message DataRes {
+message DemoRes {
     int32 id=1;
     string mobile=2;
 }

@@ -9,7 +9,7 @@ import (
 var APISet = wire.NewSet(wire.Struct(new(Handler), "*"), wire.Bind(new(IHandler), new(*Handler)))
 
 type Handler struct {
-	HandlerData *dataHandler.HData
+	HandlerDemo *dataHandler.HDemo
 }
 
 type IHandler interface {

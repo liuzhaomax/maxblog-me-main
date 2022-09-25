@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.4
-// source: data.proto
+// source: demo.proto
 
 package pb
 
@@ -35,7 +35,7 @@ type IdRequest struct {
 func (x *IdRequest) Reset() {
 	*x = IdRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_data_proto_msgTypes[0]
+		mi := &file_demo_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -48,7 +48,7 @@ func (x *IdRequest) String() string {
 func (*IdRequest) ProtoMessage() {}
 
 func (x *IdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_proto_msgTypes[0]
+	mi := &file_demo_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -61,7 +61,7 @@ func (x *IdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IdRequest.ProtoReflect.Descriptor instead.
 func (*IdRequest) Descriptor() ([]byte, []int) {
-	return file_data_proto_rawDescGZIP(), []int{0}
+	return file_demo_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *IdRequest) GetId() uint32 {
@@ -71,7 +71,7 @@ func (x *IdRequest) GetId() uint32 {
 	return 0
 }
 
-type DataRes struct {
+type DemoRes struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -80,23 +80,23 @@ type DataRes struct {
 	Mobile string `protobuf:"bytes,2,opt,name=mobile,proto3" json:"mobile,omitempty"`
 }
 
-func (x *DataRes) Reset() {
-	*x = DataRes{}
+func (x *DemoRes) Reset() {
+	*x = DemoRes{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_data_proto_msgTypes[1]
+		mi := &file_demo_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *DataRes) String() string {
+func (x *DemoRes) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DataRes) ProtoMessage() {}
+func (*DemoRes) ProtoMessage() {}
 
-func (x *DataRes) ProtoReflect() protoreflect.Message {
-	mi := &file_data_proto_msgTypes[1]
+func (x *DemoRes) ProtoReflect() protoreflect.Message {
+	mi := &file_demo_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,60 +107,60 @@ func (x *DataRes) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DataRes.ProtoReflect.Descriptor instead.
-func (*DataRes) Descriptor() ([]byte, []int) {
-	return file_data_proto_rawDescGZIP(), []int{1}
+// Deprecated: Use DemoRes.ProtoReflect.Descriptor instead.
+func (*DemoRes) Descriptor() ([]byte, []int) {
+	return file_demo_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *DataRes) GetId() int32 {
+func (x *DemoRes) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DataRes) GetMobile() string {
+func (x *DemoRes) GetMobile() string {
 	if x != nil {
 		return x.Mobile
 	}
 	return ""
 }
 
-var File_data_proto protoreflect.FileDescriptor
+var File_demo_proto protoreflect.FileDescriptor
 
-var file_data_proto_rawDesc = []byte{
-	0x0a, 0x0a, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1b, 0x0a, 0x09,
+var file_demo_proto_rawDesc = []byte{
+	0x0a, 0x0a, 0x64, 0x65, 0x6d, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1b, 0x0a, 0x09,
 	0x49, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0x31, 0x0a, 0x07, 0x44, 0x61, 0x74,
-	0x61, 0x52, 0x65, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
+	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x22, 0x31, 0x0a, 0x07, 0x44, 0x65, 0x6d,
+	0x6f, 0x52, 0x65, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
 	0x52, 0x02, 0x69, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x6d, 0x6f, 0x62, 0x69, 0x6c, 0x65, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6d, 0x6f, 0x62, 0x69, 0x6c, 0x65, 0x32, 0x32, 0x0a, 0x0b,
-	0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x23, 0x0a, 0x0b, 0x47,
-	0x65, 0x74, 0x44, 0x61, 0x74, 0x61, 0x42, 0x79, 0x49, 0x64, 0x12, 0x0a, 0x2e, 0x49, 0x64, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73,
+	0x44, 0x65, 0x6d, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x23, 0x0a, 0x0b, 0x47,
+	0x65, 0x74, 0x44, 0x65, 0x6d, 0x6f, 0x42, 0x79, 0x49, 0x64, 0x12, 0x0a, 0x2e, 0x49, 0x64, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x44, 0x65, 0x6d, 0x6f, 0x52, 0x65, 0x73,
 	0x42, 0x05, 0x5a, 0x03, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_data_proto_rawDescOnce sync.Once
-	file_data_proto_rawDescData = file_data_proto_rawDesc
+	file_demo_proto_rawDescOnce sync.Once
+	file_demo_proto_rawDescData = file_demo_proto_rawDesc
 )
 
-func file_data_proto_rawDescGZIP() []byte {
-	file_data_proto_rawDescOnce.Do(func() {
-		file_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_data_proto_rawDescData)
+func file_demo_proto_rawDescGZIP() []byte {
+	file_demo_proto_rawDescOnce.Do(func() {
+		file_demo_proto_rawDescData = protoimpl.X.CompressGZIP(file_demo_proto_rawDescData)
 	})
-	return file_data_proto_rawDescData
+	return file_demo_proto_rawDescData
 }
 
-var file_data_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_data_proto_goTypes = []interface{}{
+var file_demo_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_demo_proto_goTypes = []interface{}{
 	(*IdRequest)(nil), // 0: IdRequest
-	(*DataRes)(nil),   // 1: DataRes
+	(*DemoRes)(nil),   // 1: DemoRes
 }
-var file_data_proto_depIdxs = []int32{
-	0, // 0: DataService.GetDataById:input_type -> IdRequest
-	1, // 1: DataService.GetDataById:output_type -> DataRes
+var file_demo_proto_depIdxs = []int32{
+	0, // 0: DemoService.GetDemoById:input_type -> IdRequest
+	1, // 1: DemoService.GetDemoById:output_type -> DemoRes
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -168,13 +168,13 @@ var file_data_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_data_proto_init() }
-func file_data_proto_init() {
-	if File_data_proto != nil {
+func init() { file_demo_proto_init() }
+func file_demo_proto_init() {
+	if File_demo_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_data_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_demo_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IdRequest); i {
 			case 0:
 				return &v.state
@@ -186,8 +186,8 @@ func file_data_proto_init() {
 				return nil
 			}
 		}
-		file_data_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DataRes); i {
+		file_demo_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DemoRes); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -203,20 +203,20 @@ func file_data_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_data_proto_rawDesc,
+			RawDescriptor: file_demo_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_data_proto_goTypes,
-		DependencyIndexes: file_data_proto_depIdxs,
-		MessageInfos:      file_data_proto_msgTypes,
+		GoTypes:           file_demo_proto_goTypes,
+		DependencyIndexes: file_demo_proto_depIdxs,
+		MessageInfos:      file_demo_proto_msgTypes,
 	}.Build()
-	File_data_proto = out.File
-	file_data_proto_rawDesc = nil
-	file_data_proto_goTypes = nil
-	file_data_proto_depIdxs = nil
+	File_demo_proto = out.File
+	file_demo_proto_rawDesc = nil
+	file_demo_proto_goTypes = nil
+	file_demo_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -227,74 +227,74 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// DataServiceClient is the client API for DataService service.
+// DemoServiceClient is the client API for DemoService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DataServiceClient interface {
-	GetDataById(ctx context.Context, in *IdRequest, opts ...grpc.CallOption) (*DataRes, error)
+type DemoServiceClient interface {
+	GetDemoById(ctx context.Context, in *IdRequest, opts ...grpc.CallOption) (*DemoRes, error)
 }
 
-type dataServiceClient struct {
+type demoServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDataServiceClient(cc grpc.ClientConnInterface) DataServiceClient {
-	return &dataServiceClient{cc}
+func NewDemoServiceClient(cc grpc.ClientConnInterface) DemoServiceClient {
+	return &demoServiceClient{cc}
 }
 
-func (c *dataServiceClient) GetDataById(ctx context.Context, in *IdRequest, opts ...grpc.CallOption) (*DataRes, error) {
-	out := new(DataRes)
-	err := c.cc.Invoke(ctx, "/DataService/GetDataById", in, out, opts...)
+func (c *demoServiceClient) GetDemoById(ctx context.Context, in *IdRequest, opts ...grpc.CallOption) (*DemoRes, error) {
+	out := new(DemoRes)
+	err := c.cc.Invoke(ctx, "/DemoService/GetDemoById", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DataServiceServer is the server API for DataService service.
-type DataServiceServer interface {
-	GetDataById(context.Context, *IdRequest) (*DataRes, error)
+// DemoServiceServer is the server API for DemoService service.
+type DemoServiceServer interface {
+	GetDemoById(context.Context, *IdRequest) (*DemoRes, error)
 }
 
-// UnimplementedDataServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedDataServiceServer struct {
+// UnimplementedDemoServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedDemoServiceServer struct {
 }
 
-func (*UnimplementedDataServiceServer) GetDataById(context.Context, *IdRequest) (*DataRes, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetDataById not implemented")
+func (*UnimplementedDemoServiceServer) GetDemoById(context.Context, *IdRequest) (*DemoRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDemoById not implemented")
 }
 
-func RegisterDataServiceServer(s *grpc.Server, srv DataServiceServer) {
-	s.RegisterService(&_DataService_serviceDesc, srv)
+func RegisterDemoServiceServer(s *grpc.Server, srv DemoServiceServer) {
+	s.RegisterService(&_DemoService_serviceDesc, srv)
 }
 
-func _DataService_GetDataById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DemoService_GetDemoById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(IdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).GetDataById(ctx, in)
+		return srv.(DemoServiceServer).GetDemoById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/DataService/GetDataById",
+		FullMethod: "/DemoService/GetDemoById",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).GetDataById(ctx, req.(*IdRequest))
+		return srv.(DemoServiceServer).GetDemoById(ctx, req.(*IdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _DataService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "DataService",
-	HandlerType: (*DataServiceServer)(nil),
+var _DemoService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "DemoService",
+	HandlerType: (*DemoServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetDataById",
-			Handler:    _DataService_GetDataById_Handler,
+			MethodName: "GetDemoById",
+			Handler:    _DemoService_GetDemoById_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "data.proto",
+	Metadata: "demo.proto",
 }
