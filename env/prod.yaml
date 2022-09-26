@@ -16,12 +16,12 @@ server:
 
 upstream:
   maxblog_fe_main:
-    host: "0.0.0.0"
+    host: "127.0.0.1"
     port: 9101
 
 downstream:
   maxblog_be_demo:
-    host: "0.0.0.0"
+    host: "127.0.0.1"
     port: 9304
 
 redis:
