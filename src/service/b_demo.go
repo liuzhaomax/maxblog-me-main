@@ -31,7 +31,7 @@ func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, er
 	}
 	var dataRes schema.DemosRes
 	for _, item := range pbRes.GetDataArr() {
-		dataRes = append(dataRes, schema.Pb2Res(item))
+		dataRes = append(dataRes, schema.Pb2DemosDataRes(item))
 	}
 	return &dataRes, nil
 }
@@ -50,6 +50,6 @@ func (bDemo *BDemo) GetDemoById(c *gin.Context, id uint32) (*schema.DemoRes, err
 	if err != nil {
 		return nil, err
 	}
-	dataRes := schema.Pb2Res(pbRes)
+	dataRes := schema.Pb2DemoRes(pbRes)
 	return &dataRes, nil
 }

@@ -12,16 +12,36 @@ type DemoRes struct {
 	Ref       string `json:"ref"`
 }
 
-type DemosRes []DemoRes
-
-func Pb2Res(dataRes *pb.DemoRes) DemoRes {
+func Pb2DemoRes(demoRes *pb.DemoRes) DemoRes {
 	return DemoRes{
-		Id:        dataRes.Id,
-		Title:     dataRes.Title,
-		Desc:      dataRes.Desc,
-		CreatedAt: dataRes.CreatedAt,
-		Content:   dataRes.Content,
-		View:      dataRes.View,
-		Ref:       dataRes.Ref,
+		Id:        demoRes.Id,
+		Title:     demoRes.Title,
+		Desc:      demoRes.Desc,
+		CreatedAt: demoRes.CreatedAt,
+		Content:   demoRes.Content,
+		View:      demoRes.View,
+		Ref:       demoRes.Ref,
+	}
+}
+
+type DemosDataRes struct {
+	Id        uint32 `json:"id"`
+	Title     string `json:"title"`
+	Desc      string `json:"desc"`
+	CreatedAt string `json:"createdAt"`
+	View      uint32 `json:"view"`
+	Preview   string `json:"preview"`
+}
+
+type DemosRes []DemosDataRes
+
+func Pb2DemosDataRes(demosDataRes *pb.DemoRes) DemosDataRes {
+	return DemosDataRes{
+		Id:        demosDataRes.Id,
+		Title:     demosDataRes.Title,
+		Desc:      demosDataRes.Desc,
+		CreatedAt: demosDataRes.CreatedAt,
+		Preview:   demosDataRes.Preview,
+		View:      demosDataRes.View,
 	}
 }
