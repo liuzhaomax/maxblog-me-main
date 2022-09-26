@@ -18,7 +18,8 @@ message DemoRes {
     string createdAt=4;
     string content=5;
     uint32 view=6;
-    string ref=7;
+    string preview=7;
+    string ref=8;
 }
 
 message CountRequest {

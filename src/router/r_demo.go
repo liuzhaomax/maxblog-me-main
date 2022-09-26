@@ -6,8 +6,9 @@ import (
 )
 
 func RegisterRouter(handler *handler.HDemo, group *gin.RouterGroup) {
-	routerDemo := group.Group("")
+	routerDemo := group.Group("/demo")
 	{
+		routerDemo.GET("", handler.GetDemos)
 		routerDemo.GET("/:id", handler.GetDemoById)
 	}
 }
