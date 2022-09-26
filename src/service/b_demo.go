@@ -15,7 +15,28 @@ var DemoSet = wire.NewSet(wire.Struct(new(BDemo), "*"))
 
 type BDemo struct{}
 
-func (b *BDemo) GetDemoById(c *gin.Context, id uint32) (*schema.DemoRes, error) {
+func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, error) {
+	addr := core.GetDownstreamMaxblogBETemplateAddr()
+	conn, err := grpc.Dial(addr, grpc.WithInsecure())
+	if err != nil {
+		logger.WithFields(logger.Fields{
+			"失败方法": core.GetFuncName(),
+		}).Fatal(core.FormatError(300, err).Error())
+		return nil, err
+	}
+	client := pb.NewDemoServiceClient(conn)
+	pbRes, err := client.GetDemos(context.Background(), &pb.CountRequest{Count: count})
+	if err != nil {
+		return nil, err
+	}
+	var dataRes schema.DemosRes
+	for _, item := range pbRes.GetDataArr() {
+		dataRes = append(dataRes, schema.Pb2Res(item))
+	}
+	return &dataRes, nil
+}
+
+func (bDemo *BDemo) GetDemoById(c *gin.Context, id uint32) (*schema.DemoRes, error) {
 	addr := core.GetDownstreamMaxblogBETemplateAddr()
 	conn, err := grpc.Dial(addr, grpc.WithInsecure())
 	if err != nil {

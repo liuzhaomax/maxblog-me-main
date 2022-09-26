@@ -12,6 +12,8 @@ type DemoRes struct {
 	Ref       string `json:"ref"`
 }
 
+type DemosRes []DemoRes
+
 func Pb2Res(dataRes *pb.DemoRes) DemoRes {
 	return DemoRes{
 		Id:        dataRes.Id,

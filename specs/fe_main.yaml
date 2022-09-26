@@ -18,30 +18,11 @@ paths:
       tags:
         - demo
       description: GET 样例页面数据
-      responses:
-        200:
-          description: success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DemoData'
-        500:
-          description: fail
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Http500Response'
-
-  /demo/count:
-    get:
-      tags:
-        - demo
-      description: 根据滚轮数查找对应样例队列
       parameters:
-        - name: counts
+        - name: count
           in: query
           description: 鼠标滚轮到底次数
-          required: true
+          required: false
           schema:
             type: integer
             format: int32
