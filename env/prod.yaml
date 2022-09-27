@@ -9,8 +9,6 @@ app:
 server:
   host: "0.0.0.0"
   port: 9202
-  protocol: "https"
-  secure: true
   shutdown_timeout: 10
   tags:
     - maxblog-me-main
@@ -18,8 +16,11 @@ server:
 
 upstream:
   maxblog_fe_main:
+    protocol: "https"
+    domain: "10.192.0.5:9101"
     host: "10.192.0.5"
     port: 9101
+    secure: true
 
 downstream:
   maxblog_be_demo:

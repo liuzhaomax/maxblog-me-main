@@ -16,7 +16,7 @@ var DemoSet = wire.NewSet(wire.Struct(new(BDemo), "*"))
 type BDemo struct{}
 
 func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, error) {
-	addr := core.GetDownstreamMaxblogBETemplateAddr()
+	addr := core.GetDownstreamMaxblogBEDemoAddr()
 	conn, err := grpc.Dial(addr, grpc.WithInsecure())
 	if err != nil {
 		logger.WithFields(logger.Fields{
@@ -37,7 +37,7 @@ func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, er
 }
 
 func (bDemo *BDemo) GetDemoById(c *gin.Context, id uint32) (*schema.DemoRes, error) {
-	addr := core.GetDownstreamMaxblogBETemplateAddr()
+	addr := core.GetDownstreamMaxblogBEDemoAddr()
 	conn, err := grpc.Dial(addr, grpc.WithInsecure())
 	if err != nil {
 		logger.WithFields(logger.Fields{

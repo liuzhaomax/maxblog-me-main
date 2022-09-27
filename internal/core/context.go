@@ -33,7 +33,7 @@ type Context struct {
 }
 
 type Upstream struct {
-	MaxblogFEMain Address
+	MaxblogFEMain AddressHttp
 }
 
 type Downstream struct {
@@ -45,21 +45,27 @@ type Address struct {
 	Port int
 }
 
-func SetUpstreamAddr(host string, port int) {
-	ctx.Upstream.MaxblogFEMain.Host = host
-	ctx.Upstream.MaxblogFEMain.Port = port
+type AddressHttp struct {
+	Protocol string
+	Domain   string
+	Host     string
+	Port     int
+	Secure   bool
 }
 
 func GetUpstreamAddr() string {
 	return fmt.Sprintf("%s:%d", ctx.Upstream.MaxblogFEMain.Host, ctx.Upstream.MaxblogFEMain.Port)
 }
 
-func SetDownstreamAddr(host string, port int) {
-	ctx.Downstream.MaxblogBEDemo.Host = host
-	ctx.Downstream.MaxblogBEDemo.Port = port
+func GetUpstreamDomain() string {
+	return fmt.Sprintf("%s://%s", ctx.Upstream.MaxblogFEMain.Protocol, ctx.Upstream.MaxblogFEMain.Domain)
 }
 
-func GetDownstreamMaxblogBETemplateAddr() string {
+func GetUpstreamSecure() bool {
+	return ctx.Upstream.MaxblogFEMain.Secure
+}
+
+func GetDownstreamMaxblogBEDemoAddr() string {
 	return fmt.Sprintf("%s:%d", ctx.Downstream.MaxblogBEDemo.Host, ctx.Downstream.MaxblogBEDemo.Port)
 }
 
