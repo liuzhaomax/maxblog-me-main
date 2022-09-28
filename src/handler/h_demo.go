@@ -28,7 +28,7 @@ func (hDemo *HDemo) GetDemos(c *gin.Context) {
 		hDemo.IRes.ResFailure(c, core.GetFuncName(), http.StatusInternalServerError, core.FormatError(399, err))
 		return
 	}
-	hDemo.IRes.ResSuccess(c, core.GetFuncName(), dataRes)
+	hDemo.IRes.ResSuccess(c, core.GetFuncName(), http.StatusOK, dataRes)
 }
 
 func (hDemo *HDemo) GetDemoById(c *gin.Context) {
@@ -43,5 +43,5 @@ func (hDemo *HDemo) GetDemoById(c *gin.Context) {
 		hDemo.IRes.ResFailure(c, core.GetFuncName(), http.StatusInternalServerError, core.FormatError(399, err))
 		return
 	}
-	hDemo.IRes.ResSuccess(c, core.GetFuncName(), dataRes)
+	hDemo.IRes.ResSuccess(c, core.GetFuncName(), http.StatusOK, dataRes)
 }
