@@ -6,6 +6,7 @@ import (
 	"github.com/google/wire"
 	logger "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"maxblog-me-main/internal/core"
 	"maxblog-me-main/src/pb"
 	"maxblog-me-main/src/schema"
@@ -17,7 +18,7 @@ type BDemo struct{}
 
 func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, error) {
 	addr := core.GetDownstreamMaxblogBEDemoAddr()
-	conn, err := grpc.Dial(addr, grpc.WithInsecure())
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		logger.WithFields(logger.Fields{
 			"失败方法": core.GetFuncName(),
