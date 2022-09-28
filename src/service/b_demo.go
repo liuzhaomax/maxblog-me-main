@@ -22,7 +22,7 @@ func (bDemo *BDemo) GetDemos(c *gin.Context, count uint32) (*schema.DemosRes, er
 	if err != nil {
 		logger.WithFields(logger.Fields{
 			"失败方法": core.GetFuncName(),
-		}).Fatal(core.FormatError(300, err).Error())
+		}).Info(core.FormatError(300, err).Error())
 		return nil, err
 	}
 	client := pb.NewDemoServiceClient(conn)
@@ -43,7 +43,7 @@ func (bDemo *BDemo) GetDemoById(c *gin.Context, id uint32) (*schema.DemoRes, err
 	if err != nil {
 		logger.WithFields(logger.Fields{
 			"失败方法": core.GetFuncName(),
-		}).Fatal(core.FormatError(300, err).Error())
+		}).Info(core.FormatError(300, err).Error())
 		return nil, err
 	}
 	client := pb.NewDemoServiceClient(conn)
