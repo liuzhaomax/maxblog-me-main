@@ -31,7 +31,9 @@ func InitInjector() (*Injector, error) {
 		HandlerDemo: hDemo,
 	}
 	engine := conf.InitGinEngine(apiHandler)
-	interceptorInterceptor := &interceptor.Interceptor{}
+	interceptorInterceptor := &interceptor.Interceptor{
+		ILogger: logger,
+	}
 	injector := &Injector{
 		Engine:      engine,
 		Handler:     apiHandler,
